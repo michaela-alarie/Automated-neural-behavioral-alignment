@@ -1,0 +1,6 @@
+Code	Description
+9	TrialStart
+18  TrialStop
+20	FixationOn
+24	FixationOff
+
