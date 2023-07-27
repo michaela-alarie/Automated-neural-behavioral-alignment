@@ -1,6 +1,6 @@
 function [AOStimStartTimes_Sec,AOStimError_ms]=findAOStimLatency(file,samplingRate, t, itP)
 % Michaela Alarie
-% Updated July 18, 2023
+% Updated July 26, 2023
 %%% Usage
 % Compares previously identified times (see alignCutStimMarkers.m) of TS
 % identified in device LFPs with Stimulation times logged by the NeuroOmega
@@ -28,5 +28,6 @@ AOStimStartLoc=[1,AOStimStartLoc];
 AOStimStartTimes=CStimMarker_1(1,AOStimStartLoc);
 AOStimStartTimes_Sec=(AOStimStartTimes-min(AOStimStartTimes))/(1000*samplingRate);
 AOStimError=AOStimStartTimes_Sec-(t(itP)-min(t(itP))); % find error between AO Logged stim and identified TS
+AOStimError=AOStimError-mean(AOStimError);
 AOStimError_ms=AOStimError*1000; %convert to ms
 end

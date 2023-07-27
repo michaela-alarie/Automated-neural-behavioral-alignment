@@ -1,6 +1,6 @@
 function [AONines_Sec,AOEventError_ms]=findAOEventLatency(file,samplingRate, t, itP)
 % Michaela Alarie
-% Updated July 18, 2023
+% Updated July 26, 2023
 %%% Usage
 % Compares previously identified times (see alignCutStimMarkers.m) of TS
 % identified in device LFPs with Event trial start times logged by the NeuroOmega
@@ -22,5 +22,6 @@ AONinesLocs=find(CPORT__1(2,:)==9);
 AONines=CPORT__1(1,AONinesLocs);
 AONines_Sec=(AONines-min(AONines))/(samplingRate*1000);
 AOEventError=AONines_Sec-(t(itP)-min(t(itP))); % find error between AO Logged event and identified TS
+AOEventError=AOEventError-mean(AOEventError);
 AOEventError_ms=AOEventError*1000; %convert to ms
 end
