@@ -1,5 +1,5 @@
 # Automated-neural-behavioral-alignment
-Code for automated TS triggers from a MonkeyLogic task along with code for identifying artifacts in an implantable DBS system. For details see "Automated neural-behavioral data alignment for fully implantable DBS platforms"
+Code for automated TS triggers from a MonkeyLogic task along with code for identifying artifacts in an implantable DBS system. For details see "Automated artifact injection into sensing-capable brain modulation devices for neural-behavioral synchronization and the influence of device state"
 
 Each folder has its own README for the functions/scripts/files involved. This gives a very general overview of what is contained in each folder.
 
